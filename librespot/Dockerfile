@@ -1,4 +1,6 @@
-ARG BUILD_FROM=docker.io/thibaudmathieu/librespot-hassio:latest
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+FROM docker.io/thibaudmathieu/librespot-hassio:latest
 
+COPY run.sh /
+RUN chmod a+x /run.sh
+
+CMD [ "/run.sh" ]
